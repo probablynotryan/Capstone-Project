@@ -9,10 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.9",
-    "nunjucks": "^3.2.3",
-    "bcrypt": "^5.0.1"
+    "@koa/router": "^9.4.0",
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-dust": "^0.0.5",
+    "koa-logger": "^3.2.1",
+    "koa-session": "^6.2.0",
+    "koa-static": "^5.0.0",
+    "promise-mysql": "^5.0.3"
   }
 }
