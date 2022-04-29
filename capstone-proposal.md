@@ -10,8 +10,8 @@
 
 ### Technologies Used
 - HTML, CSS, Javascript (frontend)
-- NodeJS, SQL, ExpressJS (backend)
-- jQuery, DustJS, NunjucksJS 
+- NodeJS, SQL, ExpressJS OR koaJS (backend)
+- jQuery, DustJS OR NunjucksJS 
 
 ### Stretch Goals
   - Use Swift (or React Native) to create an app to allow users to scan to UPCs with their phone
@@ -19,6 +19,8 @@
 
 ### Additional Tools Used
 - Swift (for stretch goal), or React Native
+- nodemon
+- promise-mysql
 
 ### Notes for Teacher:
 The idea is to motivate users to collect UPCs (and entering their details) by either manually entering them in through a webpage or (stretch goal) building an app that scans it. It would follow a "gigapet" type system, in which you're given a monster that needs to be taken care of using "loot" you collect from unique UPCS.
