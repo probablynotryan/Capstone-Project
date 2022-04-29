@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended: true}));
 env.express(app);
 
 app.get('/', (req, res) => {
-  res.send('Test.')
+  res.render('index.html', {})
 });
 
 app.listen(port, () => {
