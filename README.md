@@ -7,3 +7,4 @@
 * 11:24am: reconsidering using koaJS with dust templating, evaluating pros and cons
 * 12:12pm: continue familarizing myself with dust
 * 12:58pm: consider/create "monster" art
+* 1:42: additional consideration for koa/dust research
