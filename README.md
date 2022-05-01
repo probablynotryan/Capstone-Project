@@ -9,3 +9,6 @@
 * 12:58pm: consider/create "monster" art
 * 1:42pm: additional consideration for koa/dust research
 * 3:00pm: start to convert to koa/dust
+* 3:50pm: test templating koa body parsing
+* 4:50pm: backpedal and go back to using express
+* 5:10pm: rewind back to express backend
