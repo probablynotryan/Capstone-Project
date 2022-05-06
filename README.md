@@ -12,3 +12,6 @@
 * 3:50pm: test templating koa body parsing
 * 4:50pm: backpedal and go back to using express
 * 5:10pm: rewind back to express backend
+
+#### Friday, 04/29
+* 10:25: researching template engines to work with express (liquidJS doesn't look bad)
