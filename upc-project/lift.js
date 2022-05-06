@@ -7,9 +7,9 @@ const env = nunjucks.configure('', {
   express: app,
   watch: true
 })
-app.use(express.static('files'));
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static('static'));
 env.express(app);
 
 app.get('/', (req, res) => {
