@@ -13,7 +13,7 @@ app.use(express.static('static'));
 env.express(app);
 
 app.get('/', (req, res) => {
-  res.render('index.html', {})
+  res.render('wrapper.html', {})
 });
 
 app.listen(port, () => {
