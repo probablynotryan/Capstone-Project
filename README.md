@@ -13,5 +13,9 @@
 * 4:50pm: backpedal and go back to using express
 * 5:10pm: rewind back to express backend
 
-#### Friday, 04/29
-* 10:25: researching template engines to work with express (liquidJS doesn't look bad)
+#### Friday, 05/06
+* 10:25am: researching template engines to work with express (liquidJS doesn't look bad)
+* 11:25am: studying how to use nunjucks as a template engine
+
+### Sunday, 05/08
+* 5:40pm: researching body parsing for routing with nunjucks
