@@ -16,7 +16,11 @@ app.use(express.json());
 env.express(app);
 
 app.get('/', (req, res) => {
-  res.render('index.njk', {layout: 'layout.njk'});
+  let data = {
+    layout: 'layout.njk',
+    siteName: 'UPC Stuff'
+  }
+  res.render('login.njk', data);
 });
 
 app.listen(port, () => {
