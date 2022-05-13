@@ -2,7 +2,6 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
-// note: consider moving authorization into a exported/imported module
 
 const app = express();
 const port = 3000;
