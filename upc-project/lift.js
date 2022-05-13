@@ -1,5 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+// const bcrypt = require('bcrypt'); <== yup
+// note: consider moving authorization into a exported/imported module
 
 const app = express();
 const port = 3000;
@@ -22,6 +24,18 @@ app.get('/', (req, res) => {
   }
   res.render('login.njk', data);
 });
+
+// handleGetLogin : async (res, req) => {
+//   if (res.session.view) {
+//     routeName = 'loggedInPlayer'
+//   } else {
+//     routeName = "login"
+//   }
+//   normally koa body parse info would go here
+//   change routeName info in route
+//   method called in get/post request, send that to the render
+// }
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
