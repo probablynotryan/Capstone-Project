@@ -2,17 +2,19 @@
 
 
 {% block content %}
-<form class="form-login" method="POST" action="/searchQuotesAdmin">
-    <h1 class="h3 mb-3 font-weight-normal">Please log in to {{ siteName }}</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required />
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-        </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-</form>
+<div class="text-center">
+  <form class="form-login" method="POST" action="/#">
+      <h1 class="h3 mb-3 font-weight-normal">{{ siteName }}</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required />
+      <div class="checkbox mb-3">
+          <label>
+              <input type="checkbox" value="remember-me" /> Remember me
+          </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+  </form>
+</div>
 {% endblock %}

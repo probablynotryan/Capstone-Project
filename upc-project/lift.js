@@ -2,7 +2,7 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
-const MySQLStore = requie('express-mysql-session')(session);
+const MySQLStore = require('express-mysql-session')(session);
 
 // const options = {
 //   databaseInformation/Login
