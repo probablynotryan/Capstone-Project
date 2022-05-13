@@ -2,6 +2,21 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
+const MySQLStore = requie('express-mysql-session')(session);
+
+// const options = {
+//   databaseInformation/Login
+// }
+
+// const sessionStore = new MySQLStore(options);
+
+// app.use(session({
+//   key: "look_at_all_them_chickens",
+//   secret: "the_cake_is_on_fire",
+//   store: sessionStore,
+//   resave: false,
+//   saveUninitialized: false
+// }))
 
 const app = express();
 const port = 3000;
