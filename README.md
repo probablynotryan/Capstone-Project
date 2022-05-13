@@ -15,4 +15,5 @@
 5/06 | 10:25am: researching template engines to work with express (liquidJS doesn't look bad)  
 5/06 | 11:25am: studying how to use nunjucks as a template engine  
 5/08 | 5:40pm: researching body parsing for routing with nunjucks  
-5/13 | 2:55pm: researching cookies/cookieparsing with express
+5/13 | 2:55pm: researching cookies/cookieparsing with express  
+5/13 | 4:20pm: watching videos on session tutorials
