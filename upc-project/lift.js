@@ -1,8 +1,16 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const MySQLStore = require('express-mysql-session')(session);
+
+app.use(cookieParser());
+
+const myUserName = 'testUser';
+const myPassword = 'testPassword';
+
+
 
 // const options = {
 //   databaseInformation/Login
@@ -10,13 +18,14 @@ const MySQLStore = require('express-mysql-session')(session);
 
 // const sessionStore = new MySQLStore(options);
 
-// app.use(session({
-//   key: "look_at_all_them_chickens",
-//   secret: "the_cake_is_on_fire",
-//   store: sessionStore,
-//   resave: false,
-//   saveUninitialized: false
-// }))
+app.use(session({
+  key: "look_at_all_them_chickens",
+  secret: "the_cake_is_on_fire",
+  store: sessionStore,
+  cookie: {maxAge: 84600000},
+  resave: false,
+  saveUninitialized: false
+}))
 
 const app = express();
 const port = 3000;
@@ -33,11 +42,11 @@ app.use(express.json());
 env.express(app);
 
 app.get('/', (req, res) => {
-  let data = {
-    layout: 'layout.njk',
-    siteName: 'UPC Stuff'
-  }
+  if (req.session){
+    res.render('index.njk', 'layout.njk')
+  } else {
   res.render('login.njk', data);
+  }
 });
 
 // handleGetLogin : async (res, req) => {
