@@ -3,12 +3,13 @@ const nunjucks = require('nunjucks');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
+const mysql = require('mysql');
 const MySQLStore = require('express-mysql-session')(session);
 const app = express();
+const config = require('./config/default');
 const port = 3000;
-const myUserName = 'testUser';
-const myPassword = 'testPassword';
 
+const db = mysql.createConnection(config.db);
 
 app.use(express.static('static'));
 app.use(cookieParser());
@@ -35,7 +36,13 @@ app.use(session({
   saveUninitialized: false
 }))
 
-// env.express(app);
+const testNum = "012345678910";
+
+db.query(`SELECT * FROM upc_db.upcs WHERE upc_value = ${testNum}`, function (err, result, fields) {
+  if (err) throw err;
+  result.map(r => console.log(r))
+  });
+;
 
 app.get('/', (req, res) => {
   if (req.session.key){
@@ -49,16 +56,6 @@ app.post('/login', (req, res) => {
   req.session.key = 'logged-in';
   res.render('index.njk', {layout: 'layout.njk'});
 })
-// handleGetLogin : async (res, req) => {
-//   if (res.session.view) {
-//     routeName = 'loggedInPlayer'
-//   } else {
-//     routeName = "login"
-//   }
-//   normally koa body parse info would go here
-//   change routeName info in route
-//   method called in get/post request, send that to the render
-// }
 
 
 app.listen(port, () => {
