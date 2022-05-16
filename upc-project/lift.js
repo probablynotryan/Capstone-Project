@@ -45,6 +45,10 @@ app.get('/', (req, res) => {
   }
 });
 
+app.post('/login', (req, res) => {
+  req.session.key = 'logged-in';
+  res.render('index.njk', {layout: 'layout.njk'});
+})
 // handleGetLogin : async (res, req) => {
 //   if (res.session.view) {
 //     routeName = 'loggedInPlayer'
