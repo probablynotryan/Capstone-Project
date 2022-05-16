@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
   if (req.session.key){
     res.render('index.njk', {layout: 'layout.njk'})
   } else {
-  res.render('login.njk', {layout: 'layout.njk'});
+  res.render('login.njk');
   }
 });
 
