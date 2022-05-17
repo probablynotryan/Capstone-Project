@@ -1,5 +1,5 @@
 ### Name of Student: Ryan Bass
-### Name of Project: URL Monsters
+### Name of Project: UPC Chaser
 
 ### Project's Purpose of Goal: To build up a database of URLs with details, transformed into a game to motivate users to continue collecting data.
 
