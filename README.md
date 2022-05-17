@@ -17,4 +17,5 @@
 5/08 | 5:40pm: researching body parsing for routing with nunjucks  
 5/13 | 2:55pm: researching cookies/cookieparsing with express  
 5/13 | 4:20pm: watching videos on session tutorials  
-5/15 | 10:15am: resume reading about sessions/cookies with express
+5/15 | 10:15am: resume reading about sessions/cookies with express  
+5/17 | 2:42pm: research encryption password account setup
