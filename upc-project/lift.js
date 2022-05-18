@@ -54,7 +54,7 @@ app.post('/login', (req, res) => {
 
 app.post('/scan-try', (req, res) => {
   let output = '';
-  if (req.body.scan_value.length != 14) {
+  if (req.body.scan_value.length != 12) {
     res.render('index.njk', {layout: 'layout.njk', output: 'that aint no upc, try again'});
     return;
   }
