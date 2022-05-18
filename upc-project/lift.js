@@ -55,9 +55,13 @@ app.post('/scan-try', (req, res) => {
   db.query(`SELECT * FROM upc_db.upcs WHERE upc_value = ${req.body.scan_value}`, function (err, result, fields) {
     if (err) throw err;
     if (result) {
-    result.map(r => console.log(r.upc_value));
-    } 
-  });
+    result.map(r => {
+      console.log(r.upc_value);
+      res.send(`${r.item_name} has been captured by ${r.og_scanner}`);
+    }
+    // res.render('index.njk', {layout: 'layout.njk'})
+    )}
+  })
 })
 
 app.listen(port, () => {
