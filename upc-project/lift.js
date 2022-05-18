@@ -67,6 +67,7 @@ app.post('/scan-try', (req, res) => {
           })
         } else {
           res.render('addupc.njk', {layout: 'layout.njk'});
+          console.log('fail');
           return;
         }
       let data = {
