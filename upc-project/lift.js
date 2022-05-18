@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const MySQLStore = require('express-mysql-session')(session);
 const config = require('./config/default');
+const e = require('express');
 const app = express();
 const port = 3000;
 
@@ -52,15 +53,28 @@ app.post('/login', (req, res) => {
 })
 
 app.post('/scan-try', (req, res) => {
+  let output = '';
+  if (req.body.scan_value.length != 14) {
+    res.render('index.njk', {layout: 'layout.njk', output: 'that aint no upc, try again'});
+    return;
+  }
   db.query(`SELECT * FROM upc_db.upcs WHERE upc_value = ${req.body.scan_value}`, function (err, result, fields) {
     if (err) throw err;
     if (result) {
+      if (result.length > 0) {
       result.map(r => {
-        // console.log(r.upc_value);
-        res.send(`${r.item_name} has been captured by ${r.og_scanner}`);
+            output = output.concat(`${r.item_name} has been captured by ${r.og_scanner}`);
+          })
+        } else {
+          output = 'Has yet to be scanned (YOUS AN OG);';
+        }
+      let data = {
+        layout: "layout.njk",
+        output: output
       }
-    )}
-    res.render('index.njk', {layout: 'layout.njk'})
+      console.log(data);
+    res.render('index.njk', data)
+    } 
   })
 })
 
