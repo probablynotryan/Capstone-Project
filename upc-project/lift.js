@@ -66,8 +66,8 @@ app.post('/scan-try', (req, res) => {
             output = output.concat(`${r.item_name} has been captured by ${r.og_scanner}`);
           })
         } else {
-          res.render('addupc.njk', {layout: 'layout.njk'});
-          console.log('fail');
+          console.log(req.session.key);
+          res.render('addupc.njk', {layout: 'layout.njk', upc_value: req.body.scan_value, user: req.session.key});
           return;
         }
       let data = {

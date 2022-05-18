@@ -2,7 +2,14 @@
 
 
 {% block content %}
-<h3>Congrats! You found something that hasn't been entered!</h3>
-<h4>Tell us more about what you scanned:</h4>
-
+<h4>Congrats! You found something that hasn't been entered!</h3>
+<h5>Tell us more about what you scanned:</h4>
+  <form class="form-login" method="POST" action="/login">
+      <label for="upc_value">UPC Number: </label>
+      <input name= "upc_value" class="form-control" value={{upc_value}} disabled />
+      <label for="og_founder">Discoverer (You): </label>
+      <input name="og_founder" class="form-control" placeholder={{user}}Test disabled />
+      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"/>
+      <button class="btn btn-sm btn-danger btn-block" type="submit">Log in</button>
+  </form>
 {% endblock %}
