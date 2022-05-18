@@ -66,7 +66,8 @@ app.post('/scan-try', (req, res) => {
             output = output.concat(`${r.item_name} has been captured by ${r.og_scanner}`);
           })
         } else {
-          output = 'Has yet to be scanned (YOUS AN OG);';
+          res.render('addupc.njk', {layout: 'layout.njk'});
+          return;
         }
       let data = {
         layout: "layout.njk",
