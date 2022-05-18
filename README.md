@@ -20,3 +20,4 @@
 5/15 | 10:15am: resume reading about sessions/cookies with express  
 5/17 | 2:42pm: research encryption password account setup
 5/17 | 7:10pm: seed db with test upcs
+5/18 | 12:20pm: experiment with selfhosting (mysql not working currently)
