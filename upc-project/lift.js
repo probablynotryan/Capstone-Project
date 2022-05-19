@@ -100,7 +100,11 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 })
 
-
+app.post('/add_new_u' ,(req, res)=> {
+  // db.query(`INSERT INTO upc_db.upcs (upc_value, item_name, brand_name, item_size, og_scanner) VALUES (${req.body.upc_value}, ${req.body.item_name}, ${req.body.brand_name}, ${req.body.item_size}, ${req.body.og_scanner});`);
+  console.log('test: ' + req.body.brand_name);
+  res.redirect('http://localhost:3000/');
+})
 
 /*
 
