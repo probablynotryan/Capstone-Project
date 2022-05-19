@@ -14,9 +14,11 @@
       <input name="scan_value" class="form-control" placeholder="UPC Value" required autofocus />
       <button class="fancy-button" type="submit">Scan it.</button>
   </form>
+  {% if name_of_item %}
   <p style="color:grey">
     <a href="/item_details/{{id_num}}"> {{name_of_item}}</a> has already been discovered by {{og_founder}}! Try again.
   </p>
+  {% endif %}
 </body>
 </html>
 {% endblock %}
