@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const MySQLStore = require('express-mysql-session')(session);
 const config = require('./config/default');
-const e = require('express');
 const app = express();
+// const router = express.Router();
 const port = 3000;
 
 const db = mysql.createConnection(config.db);
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 
 app.post('/login', (req, res) => {
   console.log(req.body.userName);
-  req.session.key = req.body.login;
+  req.session.key = req.body.userName;
   res.render('index.njk', {layout: 'layout.njk'});
 })
 
@@ -62,9 +62,15 @@ app.post('/scan-try', (req, res) => {
     if (err) throw err;
     if (result) {
       if (result.length > 0) {
-      result.map(r => {
-            output = output.concat(`${r.item_name} has been captured by ${r.og_scanner}`);
-          })
+          let data = {
+            layout: 'layout.njk',
+            name_of_item: result[0].item_name,
+            og_founder: result[0].og_scanner,
+            id_num: result[0].upc_num
+          }
+          res.render('index.njk', data)
+          console.log(result);
+          return;
         } else {
           console.log(req.session.key);
           res.render('addupc.njk', {layout: 'layout.njk', upc_value: req.body.scan_value, user: req.session.key});
@@ -80,6 +86,66 @@ app.post('/scan-try', (req, res) => {
   })
 })
 
+app.get('/item_details/:id', (req, res) => {
+  console.log('can you see me!')  
+  res.send(req.params);
+  });
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 })
+
+
+
+/*
+
+app.use('/api/', require('./routes/index'))
+ // routes/index.js
+const express = require('express')
+const router  = express.Router()
+
+
+router.use('/user', require('./userRoutes'))
+router.use('/auth', require('./authRoutes'))
+
+module.exports = router
+
+
+//  authRoutes.jsconst express = require('express')
+const router  = express.Router()
+const passport = require('passport')
+*/
+
+
+/*
+//  /api/auth/status
+
+router.get("/status", (req, res) => {
+  return req.user ? res.send(req.user) : res.sendStatus(401);
+});
+
+//  /api/auth/discord
+router.get("/discord", passport.authenticate('discord'));
+
+//  /api/auth/discord/redirect
+router.get("/discord/redirect", passport.authenticate('discord'), (req, res) => {
+  res.redirect('http://localhost:3000/editmemberform')
+});
+
+
+module.exports = router
+*/
+
+/*
+//userRoutes.js
+
+const express = require('express')
+const router  = express.Router()
+const { getUsers, createUser, editUser, deleteUser} = require('../controllers/userController')
+
+router.route('/').get(getUsers).post(createUser)
+router.route('/:id').put(editUser).delete(deleteUser)
+
+
+module.exports = router
+*/
