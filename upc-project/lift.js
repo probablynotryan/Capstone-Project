@@ -87,9 +87,14 @@ app.post('/scan-try', (req, res) => {
 })
 
 app.get('/item_details/:id', (req, res) => {
-  console.log('can you see me!')  
-  res.send(req.params);
-  });
+  db.query(`SELECT * FROM upc_db.upcs WHERE upc_num = ${req.params.id}`, function (err, result, fields) {
+    if (err) throw err;
+    if (result) {
+      console.log(result[0].item_name)
+      res.send(result[0].item_name + " from " + result[0].brand_name + " " + result[0].item_size)
+    }
+  })
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
