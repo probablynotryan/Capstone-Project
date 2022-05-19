@@ -8,8 +8,13 @@
       <label for="upc_value">UPC Number: </label>
       <input name= "upc_value" class="form-control" value={{upc_value}} disabled />
       <label for="og_founder">Discoverer (You): </label>
-      <input name="og_founder" class="form-control" placeholder={{user}}Test disabled />
-      <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"/>
-      <button class="btn btn-sm btn-danger btn-block" type="submit">Log in</button>
+      <input name="og_founder" class="form-control" placeholder={{user}} disabled />
+      <label for="stuff">Item Name</label>
+      <input type="text" id="inputPassword" class="form-control" name="password" placeholder="Name of Item"/>
+      <label for="otherstuff">Brand Name </label>
+      <input type="text" id="otherstuff" class="form-control" placeholder="ex: Pepsi, Hasbro" />
+      <label for="otherstuff">Size of Item </label>
+      <input type="text" id="otherstuff" class="form-control" placeholder="ex: fl oz, 100 ea, etc.." />
+      <button class="btn btn-sm btn-primary btn-block" type="submit">Enter Item</button>
   </form>
 {% endblock %}
